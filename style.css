@@ -183,6 +183,26 @@ figcaption { font-size: 14px; color: var(--muted); margin-top: 10px; }
   figure iframe { height: 340px; }
 }
 
+/* A pair of maps/images side by side within a figure. */
+.figure-pair { margin: 26px 0; }
+.figure-pair__images {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.figure-pair__images img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .figure-pair__images {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* ------------------------------------------------------------
    Your site name on the front page. Added for SOCS-SHU 289.

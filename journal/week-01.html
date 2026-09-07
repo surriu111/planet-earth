@@ -58,11 +58,15 @@
       The land cover layer is from ESA WorldCover, 10 m, 2021.
     </p>
     <p>
-      Write the proxy sentence here, once per indicator:
-      <em>      I am using tree cover and grass land in the Land cover layer to stand for urban green
+      
+      <em>I am using tree cover and grass land in the Land cover layer to stand for urban green
       space. This might fail because land cover does not distinguish clearly
       between publicly accessible parks, private green areas, street vegetation,
       and other types of vegetation.</em>
+
+      <em>I am using population density to represent where people are concentrated in
+      New York City. This might fail because population density does not show how
+      many people are actually present in an area at different times of day.</em>
     </p>
 
     <h2>The method</h2>
@@ -87,13 +91,11 @@
          choose Share → Embed, delete the <img> line, remove the <!-- and
          --> around the iframe, and paste your address in.
          ============================================================ -->
-    <figure>
-      <img src="journal/landcover-map.png" alt="A map showing the distribution of land cover in New York City.">
-        <img src="journal/population-density-map.png" alt="A map showing the distribution of population density in New York City.">
-      <!--
-      <iframe src="PASTE-YOUR-EMBED-URL-HERE"
-              title="Describe your map" loading="lazy"></iframe>
-      -->
+    <figure class="figure-pair">
+      <div class="figure-pair__images">
+        <img src="landcover-map.png" alt="A map showing the distribution of land cover in New York City.">
+        <img src="populationdensity-map.png" alt="A map showing the distribution of population density in New York City.">
+      </div>
       <figcaption>
           Comparing the population density and land-cover views shows that larger
   areas of vegetation are more common in lower-density parts of New York City,
@@ -145,7 +147,7 @@
 
 <footer class="site-foot">
   <div class="wrap wrap-narrow">
-    <p>Your Name · SOCS-SHU 289 · NYU Shanghai · Fall 2026</p>
+    <p>Yiru Su · SOCS-SHU 289 · NYU Shanghai · Fall 2026</p>
   </div>
 </footer>
 
