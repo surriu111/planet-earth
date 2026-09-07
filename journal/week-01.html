@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Week 01 · Your Name</title>
+<title>Week 01 · Yiru Su</title>
 
 <!-- Note the ../ — this page is inside the journal folder, so it has to
      look one level up to find the stylesheet. -->
@@ -15,7 +15,7 @@
 
 <header class="site-head">
   <div class="wrap">
-    <a class="brand" href="../index.html">Your Name</a>
+    <a class="brand" href="../index.html">Yiru Su</a>
     <nav>
       <a href="../index.html">Home</a>
       <a href="../index.html#journal">Journal</a>
@@ -32,7 +32,7 @@
     <!-- EDIT THIS: a title that says what you found, not what you did.
          "The blocks that were built after the creek was filled" beats
          "Week 1 journal entry". -->
-    <h1>Give this entry a real title</h1>
+    <h1>Where New York Is Greener and Less Dense</h1>
 
     <!-- ============================================================
          The six parts. Every entry in this course has all six.
@@ -42,9 +42,9 @@
 
     <h2>The question</h2>
     <p>
-      One sentence. It must be answerable, and it must have a "where" in it.
-      This week, that is the sentence you wrote in class:
-      at [site], [thing A] and [thing B] go together, because of [mechanism].
+         
+     In New York City, lower population density and greater green land cover tend to occur together
+         because of differences in urban development and land use.
     </p>
 
     <h2>The data</h2>
@@ -52,17 +52,28 @@
       Which layers you used in the Site Scanner, what years they are from, and
       who made them. Then the part people skip: what is missing from them, and
       what each layer is standing in for.
+
+     I used two layers from the Site Scanner: People (population density)
+      and Land cover.The population density layer is from WorldPop (2020).
+      The land cover layer is from ESA WorldCover, 10 m, 2021.
     </p>
     <p>
       Write the proxy sentence here, once per indicator:
-      <em>I am using X to stand for Y, and it might fail because Z.</em>
+      <em>      I am using tree cover and Mangroves in the Land cover layer to stand for urban green
+      space. This might fail because land cover does not distinguish clearly
+      between publicly accessible parks, private green areas, street vegetation,
+      and other types of vegetation.</em>
     </p>
 
     <h2>The method</h2>
     <p>
-      What you actually did, in enough detail that someone else could repeat
-      it. Which base layer, which overlay, roughly what zoom, and where you set
-      the opacity. If you chose a threshold or a year, say why you chose it.
+         I selected New York in the Site Scanner and examined the city at a
+  citywide scale using Sentinel-2 satellite imagery as the underlying
+  reference layer. I first displayed the
+  People (population density) layer at an opacity of
+  approximately 0.70, and then examined the
+  Land cover layer at an opacity of approximately
+  0.45.
     </p>
 
     <!-- ============================================================
@@ -83,31 +94,46 @@
               title="Describe your map" loading="lazy"></iframe>
       -->
       <figcaption>
-        A caption that says what to look at. Not "Figure 1" — tell the reader
-        where their eye should go, and what it means.
+          Comparing the population density and land-cover views shows that larger
+  areas of vegetation are more common in lower-density parts of New York City,
+  particularly Staten Island and eastern Queens, while Manhattan and the inner
+  parts of Brooklyn and Queens are more densely populated and built up.
       </figcaption>
     </figure>
 
     <h2>What I found</h2>
-    <p>
-      Plain language. What does the image actually support? Use at least three
-      of the ten words — pattern, distribution, density, clustering, proximity,
-      adjacency, connectivity, relationship, change, diffusion — and use them
-      correctly.
-    </p>
-
+ 
+     <p>
+       The two maps suggest a spatial relationship between
+       population density and the distribution
+       of green land cover in New York City. Lower-density areas tend to contain
+       larger and more continuous areas of vegetation. This pattern is especially
+       visible in parts of eastern Queens and the area around
+       Jamaica Bay.
+     </p>
+     
+     <p>
+       However, the pattern is not universal. Central Park is a clear exception:
+       it contains extensive green land cover within Manhattan and is in close
+       proximity to some of the city's most densely populated
+       neighborhoods.
+     </p>
     <h2>What this does not show</h2>
     <div class="limits">
-      <p>
-        The honest part. What the image cannot support, what you had to assume,
-        and what would change your mind. Name the extent you chose, and say how
-        the answer would differ if you had zoomed out one step.
-      </p>
-      <p>
-        <strong>AI use:</strong> AI-assisted for [what], using [which tool].
-        I verified [how]. If you did not use AI, write "No AI tools were used
-        for this entry."
-      </p>
+     <p>
+       These datasets also simplify the real landscape into pixels or grid cells.
+       The population layer measures people within approximately 100-meter cells,
+       while the land-cover layer uses 10-meter pixels. As a result, the maps do
+       not show what is happening within each individual cell. A single population
+       cell may contain buildings, roads, and small green spaces at the same time,
+       so local differences can be hidden by the spatial resolution of the data.
+     </p>
+  <p>
+    <strong>AI use:</strong> AI-assisted for organizing the structure and
+    improving the wording of this journal entry using ChatGPT. I verified the
+    final claims by comparing them with the Site Scanner maps and the layer
+    information shown in the application.
+  </p>
     </div>
 
     <a class="back" href="../index.html#journal">← Back to all entries</a>
