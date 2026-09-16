@@ -15,7 +15,7 @@
 
 <header class="site-head">
   <div class="wrap">
-    <a class="brand" href="../index.html">Your Name</a>
+    <a class="brand" href="../index.html">Yiru Su</a>
     <nav>
       <a href="../index.html">Home</a>
       <a href="../index.html#journal">Journal</a>
@@ -32,7 +32,7 @@
     <!-- EDIT THIS: a title that says what you found, not what you did.
          "The blocks that were built after the creek was filled" beats
          "Week 1 journal entry". -->
-    <h1>Climate in Sydney</h1>
+    <h1>Climate in Sydney compared to other Australian cities</h1>
 
     <!-- ============================================================
          The six parts. Every entry in this course has all six.
@@ -42,8 +42,8 @@
 
     <h2>The question</h2>
     <p>
-    How does Sydney's seasonal temperature and rainfall pattern 
-    compare with the rest of Australia
+    How does Sydney's seasonal temperature and rainfall pattern compare with
+  broader regional patterns across Australia?
     </p>
 
     <h2>The data</h2>
@@ -68,11 +68,10 @@
     <h2>The method</h2>
     <p>
     I first filtered the climate layer to Australia using the expression
-    GHCN-D ID starts with AS. I used the resulting country-level
-    view to compare broad regional patterns, especially coastal versus inland and
+    GHCN-D ID starts with AS. I check some stations to compare broad regional patterns, especially coastal versus inland and
     northern versus southern Australia. I then added a second filter for the
-    Sydney weather station using its GHCN-D station ID, joining the two expressions
-    with AND so that only one station that is closest to Sydney remained.
+    Sydney weather station using its GHCN-D station ID ASN00066037, joining the two expressions
+    with AND so that only one station that is closest to Sydney remained. It is near to the Airport with name of SYDNEY AIRPORT AMO.
     </p>
 
 
@@ -84,6 +83,7 @@
     the Australia-filtered map.
     </p>
 
+    <h2>The evidence</h2>
     <!-- ============================================================
          YOUR EVIDENCE
 
@@ -101,47 +101,50 @@
  <arcgis-embedded-map style="height:600px;width:700px;" item-id="70ce35d0ec7b48c3b4848ac10c2bd024" theme="light" heading-enabled legend-enabled share-enabled time-zone-label-enabled center="142.48880398737495,-25.63400233123401"scale="73957190.948944" portal-url="https://nyuds.maps.arcgis.com"></arcgis-embedded-map>
     </figure>
 
-    <figure class="figure-pair">
-      <div class="figure-pair__images">
-        <img src="week02-precipitation.png" alt="Week 02 image 1: climate chart or map">
-        <img src="week02-temperature.png" alt="Week 02 image 2: climate chart or map">
-      </div>
+    <figure>
+      <img src="week02-precipitation.png" alt="Week 02 precipitation chart or map">
+      <img src="week02-temperature.png" alt="Week 02 temperature chart or map">
       <figcaption>
-        Two supporting images for Week 02, showing additional maps or charts
-        (place image files named week02-1.png and week02-2.png in the journal folder).
+     Monthly precipitation (mm) and mean temperature (°C) at the Sydney station
+    for the 1981-2010 climate normal. The charts show year-round rainfall and
+    a moderate seasonal temperature cycle.
       </figcaption>
     </figure>
 
-    
 
     <h2>What I found</h2>
         <p>
-        Sydney has a moderate seasonal temperature cycle. The warmest months are
-        January and February, at about 22-23°C, while July is the coldest month at
-        about 12-13°C. Rainfall occurs throughout the year, with no completely dry
-        season.
+        Sydney shows a moderate seasonal climate pattern, with warm summers, cool
+        winters, and rainfall throughout the year. Compared with other Australian
+        stations I examined, Sydney is less extreme than inland locations. Inland climate tend
+        to have hotter summers, colder winters, and much lower precipitation.
         </p>
 
         <p>
-        Across Australia, the station data show substantial regional variation rather
-        than one single national climate pattern. Inland stations tend to be drier and
-        show larger temperature extremes, while many coastal stations are milder and
-        wetter. Sydney therefore fits the broader coastal pattern more closely than
-        the dry interior pattern.
+        Stations on the western coast generally showed cooler summer temperatures than
+        Sydney, while winter temperatures and rainfall were relatively similar. In
+        northern Australia, temperatures varied less through the year because of the
+        lower latitude. Farther south, and especially at higher-elevation stations,
+        winter temperatures were lower and in some cases fell below 0°C. At the
+        Sydney station, the lowest daily temperature remained slightly above
+        freezing, at about 0.8°C.
         </p>
+
+        <p>
+  Overall, Sydney fits a relatively mild and moist coastal pattern: it is less
+  seasonally extreme than inland Australia, more seasonal than the tropical
+  north, and warmer in winter than many southern or high-elevation locations.
+</p>
 
     <h2>What this does not show</h2>
     <div class="limits">
       <p>
-   This map does not show the current climate normal for Sydney, because the
-    layer is based on the 1981-2010 reference period rather than the current
-    1991-2020 WMO normal. It also uses one weather station to represent Sydney,
-    so the results may not capture variation across the whole metropolitan area.
-    In addition, weather stations are unevenly distributed across Australia,
-    meaning that areas with fewer stations should not be interpreted as having
-    less climate variation. If I zoomed out from Sydney to the whole country,
-    the main change would be the much greater regional variation between coastal,
-    inland, northern, and southern Australia.
+    I originally intended to aggregate the other Australian regional stations into a
+    single monthly average for comparison with Sydney. However, the chart
+     category made it difficult
+    to produce combined seasonal temperature and precipitation profile for
+     regional stations. As a result, my regional comparison is based on
+    examining several individual stations rather than a regional average.
       </p>
       <p>
         <strong>AI use:</strong> I used ChatGPT to help clarify the assignment
@@ -157,7 +160,7 @@
 
 <footer class="site-foot">
   <div class="wrap wrap-narrow">
-    <p>Your Name · SOCS-SHU 289 · NYU Shanghai · Fall 2026</p>
+    <p>Yiru Su · SOCS-SHU 289 · NYU Shanghai · Fall 2026</p>
   </div>
 </footer>
 
