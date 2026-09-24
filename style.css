@@ -159,6 +159,19 @@ figure img, figure iframe {
 figure iframe { height: 480px; }
 figcaption { font-size: 14px; color: var(--muted); margin-top: 10px; }
 
+/* Responsive container for ArcGIS embedded maps */
+arcgis-embedded-map {
+  width: 100% !important;
+  max-width: 100%;
+  height: 600px !important;
+}
+
+@media (max-width: 600px) {
+  arcgis-embedded-map {
+    height: 400px !important;
+  }
+}
+
 /* The limitations box. Every entry needs one. */
 .limits {
   background: var(--bg-alt); border: 1px solid var(--line);

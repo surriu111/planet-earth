@@ -42,9 +42,8 @@
 
     <h2>The question</h2>
     <p>
-    Where are the highest and lowest parts of my Sydney site, 
-    and how do the pattern, scale, and density of its terrain features influence water flow?
-    </p>
+Where are the steeper and flatter parts of my Sydney site, 
+and how do the pattern, scale, and density of its terrain features influence water flow?    </p>
 
     <h2>The data</h2>
     <p>
@@ -94,7 +93,7 @@ rather than the exact survey date for my specific site.</em>
     <!-- Add script to the <head> of your page to load the embeddable map component -->
 <script type="module" src="https://js.arcgis.com/5.1/embeddable-components/"></script>
 <!-- Add custom element to <body> of your page -->
- <arcgis-embedded-map style="height:600px;width:700px;" item-id="701a26356cde4463b7aee5445381b60f" theme="light" heading-enabled legend-enabled share-enabled time-zone-label-enabled center="151.16328883958164,-33.89042073202546" scale="288895.277144" portal-url="https://nyuds.maps.arcgis.com"></arcgis-embedded-map>
+ <arcgis-embedded-map style="height:600px;" item-id="701a26356cde4463b7aee5445381b60f" theme="light" heading-enabled legend-enabled share-enabled time-zone-label-enabled center="151.16328883958164,-33.89042073202546" scale="288895.277144" portal-url="https://nyuds.maps.arcgis.com"></arcgis-embedded-map>
     </figure>
 
     <figure class="figure-with-legend">
@@ -108,8 +107,7 @@ rather than the exact survey date for my specific site.</em>
       </div>
       <figcaption>
         <strong>Classified slope map.</strong> Australia_NSW_DTM5m elevation model (5 m cell size). Five slope classes derived from 3x3 neighborhood analysis.
-         Symbology: discrete classes represent terrain steepness zones. Steeper slopes cluster along coastal areas,
-          while flat areas dominate lower elevations near inland area inside the harbour.
+         Symbology: discrete classes represent terrain steepness zones. 
       </figcaption>
     </figure>
 
@@ -125,7 +123,7 @@ rather than the exact survey date for my specific site.</em>
       <figcaption>
         <strong>Continuous slope gradient map.</strong> Australia_NSW_DTM5m elevation model (5 m cell size). Gamma stretch (1.85) applied to continuous slope values for visual clarity. 
         Symbology: grayscale gradient where darker tones indicate flatter terrain and lighter tones indicate steeper slopes. 
-Darker tones indicate flatter terrain and lighter tones indicate steeper terrain. The continuous rendering shows gradual changes in slope and reveals terrain structure without imposing hard class boundaries.      </figcaption>
+   </figcaption>
     </figure>
 
 
@@ -144,10 +142,8 @@ Darker tones indicate flatter terrain and lighter tones indicate steeper terrain
         The 5 m elevation cells are larger than many urban features that affect local water flow, such as small rivers and narrow drainage channels, 
         so the map may miss important small-scale controls on runoff. Some other sites have 1m elevation data available, which would provide a more detailed view of terrain features and water flow pathways.
       </p>
-、  <p>
-    <strong>AI use:</strong>  AI-assisted for tidying the HTML in the week-03 entry, using codex and also generating alt text for the figures.
-I verified it by opening the page on a phone and a laptop and confirming no external resources were added. The metadata lookup,
-the symbology choices, the reading of the slope map and the interpretation are my own.
+  <p>
+    <strong>AI use:</strong>  Codex was used to help tidy and debug the HTML for the Week 03 entry, and AI was used to help draft alt text for the figures. I verified the page on both a phone and a laptop. The metadata lookup, symbology choices, map reading, and interpretation are my own.
 
   </p>
     </div>
