@@ -204,6 +204,53 @@ figcaption { font-size: 14px; color: var(--muted); margin-top: 10px; }
   }
 }
 
+/* Figure with legend on left side and map on right */
+.figure-with-legend {
+  margin: 26px 0;
+}
+
+.figure-with-legend__wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.figure-with-legend__legend {
+  flex-shrink: 0;
+  max-width: 120px;
+}
+
+.figure-with-legend__legend img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  display: block;
+}
+
+.figure-with-legend__map {
+  width: 100%;
+}
+
+.figure-with-legend__map img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .figure-with-legend__wrapper {
+    grid-template-columns: 1fr;
+  }
+  
+  .figure-with-legend__legend {
+    max-width: 100%;
+  }
+}
+
 /* ------------------------------------------------------------
    Your site name on the front page. Added for SOCS-SHU 289.
    ------------------------------------------------------------ */

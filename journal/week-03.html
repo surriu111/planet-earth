@@ -97,13 +97,31 @@ rather than the exact survey date for my specific site.</em>
  <arcgis-embedded-map style="height:600px;width:700px;" item-id="70ce35d0ec7b48c3b4848ac10c2bd024" theme="light" heading-enabled legend-enabled share-enabled time-zone-label-enabled center="142.48880398737495,-25.63400233123401"scale="73957190.948944" portal-url="https://nyuds.maps.arcgis.com"></arcgis-embedded-map>
     </figure>
 
-    <figure>
-      <img src="../resources/week02-precipitation.png" alt="Week 02 precipitation chart or map">
-      <img src="../resources/week02-temperature.png" alt="Week 02 temperature chart or map">
+    <figure class="figure-with-legend">
+      <div class="figure-with-legend__wrapper">
+        <div class="figure-with-legend__legend">
+          <img src="../resources/week_03_classify_legend.png" alt="Classification legend showing slope classes">
+        </div>
+        <div class="figure-with-legend__map">
+          <img src="../resources/week_03_classify.png" alt="Slope classes in Sydney showing five terrain categories: flat areas (0°), gentle slopes (0-1°), moderate slopes (1-4°), steep slopes (4-8°), and very steep slopes (8-16°). Steeper terrain concentrates around central ridge areas and steep gullies.">
+        </div>
+      </div>
       <figcaption>
-     Monthly precipitation (mm) and mean temperature (°C) at the Sydney station
-    for the 1981-2010 climate normal. The charts show year-round rainfall and
-    a moderate seasonal temperature cycle.
+        <strong>Classified slope map.</strong> Australia_NSW_DTM5m elevation model (5 m cell size). Five slope classes derived from 3×3 neighborhood analysis. Symbology: discrete classes represent terrain steepness zones. Steeper slopes cluster along ridgelines and drainage features, while flat areas dominate lower elevations near coastal plains.
+      </figcaption>
+    </figure>
+
+    <figure class="figure-with-legend">
+      <div class="figure-with-legend__wrapper">
+        <div class="figure-with-legend__legend">
+          <img src="../resources/week_03_continuous_legend.png" alt="Continuous scale legend for slope gradient">
+        </div>
+        <div class="figure-with-legend__map">
+          <img src="../resources/week_03_continuous.png" alt="Continuous slope gradient in Sydney showing smooth variation from flat areas (dark) to very steep slopes (light). Ridge features and valley systems are clearly visible as linear patterns representing water flow pathways.">
+        </div>
+      </div>
+      <figcaption>
+        <strong>Continuous slope gradient map.</strong> Australia_NSW_DTM5m elevation model (5 m cell size). Gamma stretch (1.85) applied to continuous slope values for visual clarity. Symbology: grayscale gradient where darker tones indicate flatter terrain and lighter tones indicate steeper slopes. The visualization reveals fine-grained terrain complexity and water drainage networks more clearly than classified approach.
       </figcaption>
     </figure>
 
