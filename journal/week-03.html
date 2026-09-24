@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Week 01 · Yiru Su</title>
+<title>Week 03 · Yiru Su</title>
 
 <!-- Note the ../ — this page is inside the journal folder, so it has to
      look one level up to find the stylesheet. -->
@@ -27,12 +27,12 @@
 <article class="entry">
   <div class="wrap wrap-narrow">
 
-    <p class="kicker">Week 01 · September 2026</p>
+    <p class="kicker">Week 03 · September 2026</p>
 
     <!-- EDIT THIS: a title that says what you found, not what you did.
          "The blocks that were built after the creek was filled" beats
          "Week 1 journal entry". -->
-    <h1>Where New York Is Greener and Less Dense</h1>
+    <h1>Sydney and its terrain diversity</h1>
 
     <!-- ============================================================
          The six parts. Every entry in this course has all six.
@@ -42,38 +42,37 @@
 
     <h2>The question</h2>
     <p>
-         
-     In New York City, lower population density and greater green land cover tend to occur together
-         because of differences in urban development and land use.
+    Where are the highest and lowest parts of my Sydney site, 
+    and how do the pattern, scale, and density of its terrain features influence water flow?
     </p>
 
     <h2>The data</h2>
     <p>
-     I used two layers from the Site Scanner: People (population density)
-      and Land cover.The population density layer is from WorldPop (2020).
-      The land cover layer is from ESA WorldCover (2021).
+    The elevation data came from the Australia_NSW_DTM5m model, with a 5 m cell size, 
+    using the AHD vertical datum. The layer does not state a vertical accuracy value 
+    in its metadata, and its reported acquisition period is 16 March 2008 to 14 June 2018.
+     For soils, I used SoilGrids organic carbon density at 0-5 cm depth. 
+     SoilGrids is published by ISRIC under CC BY 4.0; 
+     the ArcGIS version is a republication accessed through Esri Living Atlas.
     </p>
     <p>
       
-      <em>I am using tree cover and grass land in the Land cover layer to stand for urban green
-      space. This might fail because land cover does not distinguish clearly
-      between publicly accessible parks, private green areas, street vegetation,
-      and other types of vegetation.</em>
+      <em>A limitation is that the reported 2008-2018 acquisition period describes the compiled NSW dataset as a whole, 
+rather than the exact survey date for my specific site.</em>
 
-      <em>I am using population density to represent where people are concentrated in
-      New York City. This might fail because population density does not show how
-      many people are actually present in an area at different times of day.</em>
+
     </p>
 
     <h2>The method</h2>
     <p>
-         I selected New York in the Site Scanner and examined the city at a
-  citywide scale using Sentinel-2 satellite imagery as the underlying
-  reference layer. I first displayed the
-  People (population density) layer at an opacity of
-  approximately 0.70, and then examined the
-  Land cover layer at an opacity of approximately
-  0.45.
+    I added the layer called Terrain Slope Degrees layer in ArcGIS Online. 
+    Slope was derived from the underlying elevation raster rather than measured directly: 
+    for each cell, the calculation used a 3 x 3 window consisting of that cell and its eight neighbours.
+    I first displayed the slope values using a continuous stretch and for a clear visualization, the Gamma sets to 1.85. 
+    Then I also reclassified the same values into five manually defined classes: 
+    0-0°, 0-1°, 1-4°, 4-8°, and 8-16°. 
+    The map extent and zoom level were kept the same when comparing the two renderings.
+    Two different presenting methods of the same slope data can help me understand the terrain features in my site.
     </p>
 
     <!-- ============================================================
@@ -89,18 +88,25 @@
          ============================================================  
       
         -->
-    <figure class="figure-pair">
-      <div class="figure-pair__images">
-      <img src="../resources/landcover-map.png" alt="A map showing the distribution of land cover in New York City.">
-      <img src="../resources/populationdensity-map.png" alt="A map showing the distribution of population density in New York City.">
-      </div>
+ 
+
+    <figure>
+    <!-- Add script to the <head> of your page to load the embeddable map component -->
+<script type="module" src="https://js.arcgis.com/5.1/embeddable-components/"></script>
+<!-- Add custom element to <body> of your page -->
+ <arcgis-embedded-map style="height:600px;width:700px;" item-id="70ce35d0ec7b48c3b4848ac10c2bd024" theme="light" heading-enabled legend-enabled share-enabled time-zone-label-enabled center="142.48880398737495,-25.63400233123401"scale="73957190.948944" portal-url="https://nyuds.maps.arcgis.com"></arcgis-embedded-map>
+    </figure>
+
+    <figure>
+      <img src="../resources/week02-precipitation.png" alt="Week 02 precipitation chart or map">
+      <img src="../resources/week02-temperature.png" alt="Week 02 temperature chart or map">
       <figcaption>
-          Comparing the population density and land-cover views shows that larger
-  areas of vegetation are more common in lower-density parts of New York City,
-  particularly Staten Island and eastern Queens, while Manhattan and the inner
-  parts of Brooklyn and Queens are more densely populated and built up.
+     Monthly precipitation (mm) and mean temperature (°C) at the Sydney station
+    for the 1981-2010 climate normal. The charts show year-round rainfall and
+    a moderate seasonal temperature cycle.
       </figcaption>
     </figure>
+
 
     <h2>What I found</h2>
  
