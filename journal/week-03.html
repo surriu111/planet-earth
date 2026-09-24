@@ -94,7 +94,7 @@ rather than the exact survey date for my specific site.</em>
     <!-- Add script to the <head> of your page to load the embeddable map component -->
 <script type="module" src="https://js.arcgis.com/5.1/embeddable-components/"></script>
 <!-- Add custom element to <body> of your page -->
- <arcgis-embedded-map style="height:600px;width:700px;" item-id="70ce35d0ec7b48c3b4848ac10c2bd024" theme="light" heading-enabled legend-enabled share-enabled time-zone-label-enabled center="142.48880398737495,-25.63400233123401"scale="73957190.948944" portal-url="https://nyuds.maps.arcgis.com"></arcgis-embedded-map>
+ <arcgis-embedded-map style="height:600px;width:700px;" item-id="701a26356cde4463b7aee5445381b60f" theme="light" heading-enabled legend-enabled share-enabled time-zone-label-enabled center="151.16328883958164,-33.89042073202546" scale="288895.277144" portal-url="https://nyuds.maps.arcgis.com"></arcgis-embedded-map>
     </figure>
 
     <figure class="figure-with-legend">
@@ -107,7 +107,9 @@ rather than the exact survey date for my specific site.</em>
         </div>
       </div>
       <figcaption>
-        <strong>Classified slope map.</strong> Australia_NSW_DTM5m elevation model (5 m cell size). Five slope classes derived from 3×3 neighborhood analysis. Symbology: discrete classes represent terrain steepness zones. Steeper slopes cluster along ridgelines and drainage features, while flat areas dominate lower elevations near coastal plains.
+        <strong>Classified slope map.</strong> Australia_NSW_DTM5m elevation model (5 m cell size). Five slope classes derived from 3x3 neighborhood analysis.
+         Symbology: discrete classes represent terrain steepness zones. Steeper slopes cluster along coastal areas,
+          while flat areas dominate lower elevations near inland area inside the harbour.
       </figcaption>
     </figure>
 
@@ -121,48 +123,32 @@ rather than the exact survey date for my specific site.</em>
         </div>
       </div>
       <figcaption>
-        <strong>Continuous slope gradient map.</strong> Australia_NSW_DTM5m elevation model (5 m cell size). Gamma stretch (1.85) applied to continuous slope values for visual clarity. Symbology: grayscale gradient where darker tones indicate flatter terrain and lighter tones indicate steeper slopes. The visualization reveals fine-grained terrain complexity and water drainage networks more clearly than classified approach.
-      </figcaption>
+        <strong>Continuous slope gradient map.</strong> Australia_NSW_DTM5m elevation model (5 m cell size). Gamma stretch (1.85) applied to continuous slope values for visual clarity. 
+        Symbology: grayscale gradient where darker tones indicate flatter terrain and lighter tones indicate steeper slopes. 
+Darker tones indicate flatter terrain and lighter tones indicate steeper terrain. The continuous rendering shows gradual changes in slope and reveals terrain structure without imposing hard class boundaries.      </figcaption>
     </figure>
 
 
     <h2>What I found</h2>
  
      <p>
-       The two maps suggest a spatial relationship between
-       population density and the distribution
-       of green land cover in New York City. Lower-density areas tend to contain
-       larger and more continuous areas of vegetation. This pattern is especially
-       visible in parts of eastern Queens and the area around
-       Jamaica Bay.
+      Material would likely move downslope toward the lower-lying areas near the harbour.
+      Surface organic carbon density varies across the Sydney site rather than forming a uniform pattern.
+      Large parts of the highly urbanized area around my Sydney site are not covered by the SoilGrids prediction layer.
      </p>
-     
-     <p>
-       However, the pattern is not universal. Central Park is a clear exception:
-       it contains extensive green land cover within Manhattan and is in close
-       proximity to some of the city's most densely populated
-       neighborhoods.
-     </p>
+      
     <h2>What this does not show</h2>
     <div class="limits">
 
       <p>
-        I examined New York City and its surrounding metropolitan area at this city scale. 
-        If I zoom in a little bit, I would be able to see more details about the distribution of green land cover and population density.
+        The 5 m elevation cells are larger than many urban features that affect local water flow, such as small rivers and narrow drainage channels, 
+        so the map may miss important small-scale controls on runoff. Some other sites have 1m elevation data available, which would provide a more detailed view of terrain features and water flow pathways.
       </p>
-     <p>
-       These datasets also simplify the real landscape into pixels or grid cells.
-       The population layer measures people within approximately 100-meter cells,
-       while the land-cover layer uses 10-meter pixels. As a result, the maps do
-       not show what is happening within each individual cell. A single population
-       cell may contain buildings, roads, and small green spaces at the same time,
-       so local differences can be hidden by the spatial resolution of the data.
-     </p>
-  <p>
-    <strong>AI use:</strong> AI-assisted for organizing the structure of the code and
-    improving the wording of this journal entry using ChatGPT. I verified the
-    final claims by comparing them with the Site Scanner maps and the layer
-    information shown in the application.
+、  <p>
+    <strong>AI use:</strong>  AI-assisted for tidying the HTML in the week-03 entry, using codex and also generating alt text for the figures.
+I verified it by opening the page on a phone and a laptop and confirming no external resources were added. The metadata lookup,
+the symbology choices, the reading of the slope map and the interpretation are my own.
+
   </p>
     </div>
 
