@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week 04 · Yiru Su</title>
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Yiru Su</a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../index.html#journal">Journal</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<article class="entry">
+  <div class="wrap wrap-narrow">
+
+    <p class="kicker">Week 04 · October 2026</p>
+
+    <h1>When green does not mean habitat</h1>
+
+    <h2>The question</h2>
+    <p>
+      How do the pattern, scale, and density of green surfaces across my Sydney site affect what NDVI identifies as vegetation, and what is the green actually made of?
+    </p>
+
+    <h2>The data</h2>
+    <p>
+      I used Landsat 9 imagery from the public Multispectral Landsat service in ArcGIS Living Atlas. The sensor is Operational Land Imager. 
+      Landsat has a spatial resolution of 30 m per pixel, so each NDVI value represents an area of about 900 m²
+       rather than an individual tree or patch of grass.
+      The scene I used was acquired on 11 October 2024 with 0.18% cloud cover.
+      The Landsat service is public and token-free.
+    </p>
+
+    <p>
+      The vegetation index used was NDVI.
+      It is calculated from Landsat Band 4, the red band, and Band 5, the near-infrared band:
+      NDVI = (NIR - Red) / (NIR + Red).
+      Healthy vegetation tends to absorb red light and strongly reflect near-infrared light, producing a higher NDVI value.
+    </p>
+
+    <h2>The method</h2>
+    <p>
+      I added the Multispectral Landsat layer from Esri Living Atlas in ArcGIS Online and zoomed to my Sydney site.
+      I first used the NDVI Raw processing template to read the actual index values at selected pixels.
+      I then switched the same Landsat layer to NDVI Colorized
+       to visualize the spatial pattern of vegetation using the default green-to-brown color ramp.
+      Before looking at the results, I identified three green places for comparison:
+       Bondi Beach, the Royal Botanic Garden, and Centennial Park, and then recorded one NDVI value at each location.
+      In Landsat Explorer, I used the vegetation-index mask tool and set the lower threshold to 0.5, 
+      so pixels with NDVI values of 0.5 or higher were highlighted as “green.”
+      I chose 0.5 as a simple test threshold for relatively strong vegetation signals, 
+      then checked which managed and less-managed surfaces were included.
+    </p>
+
+    <h2>The evidence</h2>
+
+    <!-- Replace the image filename below with your actual screenshot filename -->
+    <figure>
+      <img
+        src="resources/week04-colorized.png"
+        alt="NDVI map of the Sydney site showing higher vegetation-index values in parks and managed green areas, with lower values along built and coastal surfaces."
+      >
+      <figcaption>
+        Figure 1. NDVI across my Sydney site from Landsat 9 imagery acquired on 11 October 2024, with 0.18% cloud cover.
+        Greener tones indicate higher vegetation index values; brown and pale tones indicate lower values.
+      </figcaption>
+    </figure>
+<!-- Add script to the <head> of your page to load the embeddable map component --> <script type="module" src="https://js.arcgis.com/5.1/embeddable-components/"></script> <!-- Add custom element to <body> of your page -->
+
+<arcgis-embedded-map style="height:600px;width:700px;" item-id="270f7627f4d944469ed45fa1e889f2ed" theme="light" heading-enabled legend-enabled time-zone-label-enabled center="151.17953004219885,-33.92052764502929"scale="144447.638572" portal-url="https://nyuds.maps.arcgis.com"></arcgis-embedded-map>
+
+    <h2>What I found</h2>
+    <p>
+      Before looking at the data, I predicted NDVI values of about 0.5 for Bondi Beach and 0.8 for both the Royal Botanic Garden and Centennial Park.
+      The values I read were approximately 0.25 at Bondi Beach, 0.69 at the Royal Botanic Garden, and 0.30 at the sampled point in Centennial Park.
+      I was more wrong about the size of the differences than the general ordering,
+       and the Centennial Park result also showed how strongly the value depends on the exact pixel selected within a large park.
+    </p>
+
+    <p>
+    One high-index place at my site that is not necessarily high-quality habitat is the Royal Sydney Golf Course,
+   where I recorded an NDVI of approximately 0.71. 
+   The green surface there is mainly maintained turf and landscaped vegetation, 
+   showing that a high vegetation index can reflect intensive management rather than ecological complexity.
+   </p>
+
+    <h2>What this does not show</h2>
+    <div class="limits">
+
+      <p>
+        I am using NDVI to stand for ecological value, and it might fail because managed lawns and planted urban vegetation 
+        at Sydney can produce high NDVI values even when they do not provide
+        the same habitat structure as less-managed or coastal environments.
+      </p>
+
+      <p>
+        This map therefore does not show that the greenest places have the highest biodiversity or habitat quality.
+        NDVI measures reflected light associated with vegetation, not species richness, ecological connectivity, or whether organisms can complete their life cycles there.
+      </p>
+
+      <p>
+        <strong>AI use:</strong>
+        Codex was used to help tidy and debug the HTML for the Week 04 entry,
+        and AI was used to help revise wording and draft alt text.
+        I verified the page on both a phone and a laptop.
+        The site selection, map reading, NDVI values, metadata lookup, symbology choices, and final interpretation are my own.
+      </p>
+
+    </div>
+
+    <a class="back" href="../index.html#journal">← Back to all entries</a>
+
+  </div>
+</article>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap wrap-narrow">
+    <p>Yiru Su · SOCS-SHU 289 · NYU Shanghai · Fall 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
