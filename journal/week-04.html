@@ -69,7 +69,7 @@
     <!-- Replace the image filename below with your actual screenshot filename -->
     <figure>
       <img
-        src="/Users/su/Desktop/planet-earth/resources/week04-colorized.png"
+        src="../resources/week04-colorized.png"
         alt="NDVI map of the Sydney site showing higher vegetation-index values in parks and managed green areas, with lower values along built and coastal surfaces."
       >
       <figcaption>
@@ -77,9 +77,20 @@
         Greener tones indicate higher vegetation index values; brown and pale tones indicate lower values.
       </figcaption>
     </figure>
-<!-- Add script to the <head> of your page to load the embeddable map component --> <script type="module" src="https://js.arcgis.com/5.1/embeddable-components/"></script> <!-- Add custom element to <body> of your page -->
 
-<arcgis-embedded-map style="height:600px;width:700px;" item-id="270f7627f4d944469ed45fa1e889f2ed" theme="light" heading-enabled legend-enabled time-zone-label-enabled center="151.17953004219885,-33.92052764502929"scale="144447.638572" portal-url="https://nyuds.maps.arcgis.com"></arcgis-embedded-map>
+    <figure>
+      <img
+        src="../resources/week04-index.png"
+        alt="Mask showing the part of the Sydney site with NDVI values greater than 0.5, highlighting stronger vegetation signals in greener managed and vegetated areas."
+      >
+      <figcaption>
+        Figure 2. Areas with NDVI greater than 0.5 across the Sydney site, highlighting where the vegetation signal is strongest.
+      </figcaption>
+    </figure>
+
+    <!-- ArcGIS embeddable map -->
+    <script type="module" src="https://js.arcgis.com/5.1/embeddable-components/"></script>
+    <arcgis-embedded-map style="height:600px;width:700px;" item-id="270f7627f4d944469ed45fa1e889f2ed" theme="light" heading-enabled legend-enabled time-zone-label-enabled center="151.17953004219885,-33.92052764502929" scale="144447.638572" portal-url="https://nyuds.maps.arcgis.com"></arcgis-embedded-map>
 
     <h2>What I found</h2>
     <p>
