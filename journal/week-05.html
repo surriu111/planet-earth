@@ -27,7 +27,7 @@
 
     <p class="kicker">Week 05 · October 2026</p>
 
-    <h1>Where does Water exsit in Sydney? </h1>
+    <h1>Where does Water Go in Sydney? </h1>
 
     <h2>The question</h2>
     <p>
@@ -66,32 +66,20 @@ In ArcGIS Map Viewer, I examined Aqueduct's Baseline Annual and Monthly layers.
 
     </p>
 
-    <h2>The evidence</h2>
+        <h2>The evidence</h2>
+        <figure>
+          <img src="../resources/week05-catchment.png" alt="MERIT-Hydro watershed boundary and modelled drainage network near the Royal Botanic Garden, with a snapped outlet near Sydney Harbour and a catchment of approximately 390 square kilometres.">
+          <figcaption>Figure 1. Modelled Sydney surface catchment (approximately 390 km²). Source: MERIT-Hydro (2021), higher precision, via Global Watersheds; accessed 15 October 2026.</figcaption>
+        </figure>
+        <figure>
+          <img src="../resources/week05-watershed.png" alt="HydroSHEDS delineation of the Sydney catchment, with a smaller mapped upstream drainage area of approximately 260 square kilometres than the MERIT-Hydro result.">
+          <figcaption>Figure 2. Alternative catchment delineation (approximately 260 km²). Source: HydroSHEDS (2013) via Global Watersheds; accessed 15 October 2026.</figcaption>
+        </figure>
+        <figure>
+          <arcgis-embedded-map class="water-map" item-id="a96050abd85440039e8561dcf67301ac" theme="light" heading-enabled legend-enabled time-zone-label-enabled center="150.6101831394967,-33.93312261421773" scale="1155581.108577" portal-url="https://nyuds.maps.arcgis.com"></arcgis-embedded-map>
+          <figcaption>Figure 3. Baseline annual water stress in the Sydney region (site polygon: 0.63, High; unitless ratio). Source: WRI Aqueduct 4.0 Water Risk, baseline 1979–2019, data vintage April 2023, CC BY 4.0; viewed 15 October 2026 through ArcGIS Living Atlas. Interactive map; public visibility must be checked in a signed-out browser.</figcaption>
+        </figure>
 
-    <figure>
-      <img
-        src="../resources/week05-catchment.png"
-        alt="Map of the Sydney site catchment showing the delineated drainage area and outlet near the Royal Botanic Garden, with flow leading toward the harbour and coastal urban landscape."
-      >
-      <figcaption>
-        Figure 1. Surface catchment for the Sydney site by  MERIT-Hydro.
-      </figcaption>
-    </figure>
-
-    <figure>
-      <img
-        src="../resources/week05-watershed.png"
-        alt="Watershed map for the Sydney site showing the broader drainage system and relative upstream water sources feeding the coastal urban catchment."
-      >
-      <figcaption>
-        Figure 2. Surface catchment for the Sydney site by  HydroSHEDS.
-      </figcaption>
-    </figure>
-
-    <!-- Add script to the <head> of your page to load the embeddable map component -->
-<script type="module" src="https://js.arcgis.com/5.1/embeddable-components/"></script>
-<!-- Add custom element to <body> of your page -->
- <arcgis-embedded-map style="height:600px;width:700px;" item-id="a96050abd85440039e8561dcf67301ac" theme="light" heading-enabled legend-enabled time-zone-label-enabled center="150.6101831394967,-33.93312261421773"scale="1155581.108577" portal-url="https://nyuds.maps.arcgis.com"></arcgis-embedded-map>
 
     <h2>What I found</h2>
     <p>
@@ -107,7 +95,7 @@ My original catchment estimate of 400 km² was close to the MERIT-Hydro result,
 WaterNSW's Greater Sydney Water Supply System diagram identifies the Warragamba Pipeline, 
 which transports water eastward from Warragamba Dam toward Prospect.
  This engineered transfer connects water sources beyond my site's modelled surface catchment, 
- although the precise route supplying my site could not be confirmed. 
+ although the precise route supplying my site could not。be confirmed. 
  Monthly water stress also varied considerably: January reached 1.1785,
   compared with 0.3896 in June, despite an annual value of only 0.63.
 
