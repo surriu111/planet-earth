@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week 05 · Yiru Su</title>
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Yiru Su</a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../index.html#journal">Journal</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<article class="entry">
+  <div class="wrap wrap-narrow">
+
+    <p class="kicker">Week 05 · October 2026</p>
+
+    <h1>Where does Water exsit in Sydney? </h1>
+
+    <h2>The question</h2>
+    <p>
+        Where does water at my Sydney site near the Royal Botanic Garden come from,
+        where does its runoff go, and who else depends on the same water resources? 
+    </p>
+
+    <h2>The data</h2>
+    <p>
+I used MERIT-Hydro (2021) from the University of Tokyo and HydroSHEDS (2013) through Global Watersheds to delineate my site's surface catchment.
+ Both use approximately 90 m resolution hydrological data,
+  with catchment area measured in km².
+   MERIT-Hydro was run at higher precision and is available under CC BY-NC 4.0 or ODbL 1.0, 
+   while HydroSHEDS uses its own data licence permitting educational and research use. More information is available at https://mghydro.com/watersheds/help.html.
+    </p>
+
+        <p>
+      For water stress, I used WRI's Aqueduct 4.0 Water Risk dataset, 
+      licensed under CC BY 4.0, with a baseline period of 1979-2019 and data vintage April 2023. 
+      Its water stress indicator is a dimensionless ratio of withdrawals to renewable water supply, 
+      calculated at the HydroBASINS Level 6 sub-basin scale rather than for individual buildings.
+    </p>
+  
+    <h2>The method</h2>
+    <p>
+I entered coordinates (-33.865, 151.217) -the location of the Royal Botanic Garden - into Global Watersheds.
+ MERIT-Hydro at higher precision produced a catchment of 390 km², 
+ with the outlet snapped to (-33.855, 151.218), approximately 1.12 km away. 
+ I cannot find data of MERIT-Hydro at lower precision.
+  HydroSHEDS returned 260 km², a 1.50-fold difference between the two available results. 
+
+In ArcGIS Map Viewer, I examined Aqueduct's Baseline Annual and Monthly layers.
+ My annual water stress value was 0.63 (High, 40-80%). 
+ The selected polygon covered 3,863.40 km², approximately 38,634 times my assumed site area of 0.1 km².
+
+
+    </p>
+
+    <h2>The evidence</h2>
+
+    <figure>
+      <img
+        src="../resources/week05-catchment.png"
+        alt="Map of the Sydney site catchment showing the delineated drainage area and outlet near the Royal Botanic Garden, with flow leading toward the harbour and coastal urban landscape."
+      >
+      <figcaption>
+        Figure 1. Delineated surface catchment for the Sydney site, showing the drainage area and its connection to urban and harbour-edge runoff pathways.
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img
+        src="../resources/week05-watershed.png"
+        alt="Watershed map for the Sydney site showing the broader drainage system and relative upstream water sources feeding the coastal urban catchment."
+      >
+      <figcaption>
+        Figure 2. Watershed delineation for the Sydney site, showing the connected upstream area and the broader hydrological context beyond the immediate catchment boundary.
+      </figcaption>
+    </figure>
+
+    <!-- Add script to the <head> of your page to load the embeddable map component -->
+<script type="module" src="https://js.arcgis.com/5.1/embeddable-components/"></script>
+<!-- Add custom element to <body> of your page -->
+ <arcgis-embedded-map style="height:600px;width:700px;" item-id="a96050abd85440039e8561dcf67301ac" theme="light" heading-enabled legend-enabled time-zone-label-enabled center="150.6101831394967,-33.93312261421773"scale="1155581.108577" portal-url="https://nyuds.maps.arcgis.com"></arcgis-embedded-map>
+
+    <h2>What I found</h2>
+    <p>
+My original catchment estimate of 400 km² was close to the MERIT-Hydro result,
+ but the delineation showed a more complex drainage network leading toward Sydney Harbour.
+  MERIT-Hydro and HydroSHEDS produced substantially different boundaries, 
+  suggesting sensitivity to dataset choice and outlet snapping in Sydney's urban coastal landscape.
+
+
+    </p>
+
+    <p>
+WaterNSW's Greater Sydney Water Supply System diagram identifies the Warragamba Pipeline, 
+which transports water eastward from Warragamba Dam toward Prospect.
+ This engineered transfer connects water sources beyond my site's modelled surface catchment, 
+ although the precise route supplying my site could not be confirmed. 
+ Monthly water stress also varied considerably: January reached 1.1785,
+  compared with 0.3896 in June, despite an annual value of only 0.63.
+
+   </p>
+
+    <h2>What this does not show</h2>
+    <div class="limits">
+
+      <p>
+I am using annual basin-level water stress to stand for water availability throughout the year at my Sydney site,
+ and it might fail because the annual value conceals monthly variation, including January's extremely high water stress.
+ The basin-scale indicator also cannot establish whether an individual site receives adequate or usable water.     
+ </p>
+
+ 
+      <p>
+        <strong>AI use:</strong>
+        Codex was used to help tidy and debug the HTML for the Week 05 entry,
+        and AI was used to help revise wording and draft alt text.
+        The final interpretation are my own.
+      </p>
+
+    </div>
+
+    <a class="back" href="../index.html#journal">← Back to all entries</a>
+
+  </div>
+</article>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap wrap-narrow">
+    <p>Yiru Su · SOCS-SHU 289 · NYU Shanghai · Fall 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
