@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week 06 · Yiru Su</title>
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Yiru Su</a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../index.html#journal">Journal</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<article class="entry">
+  <div class="wrap wrap-narrow">
+
+    <p class="kicker">Week 06 · October 2026</p>
+
+    <h1>Land cover around the Sydney site</h1>
+
+    <h2>The question</h2>
+    <p>
+    How has land cover around the Royal Botanic Garden in Sydney changed between 2017 and 2023?
+    What changes can the map capture, and what might it miss? 
+    </p>
+
+    <h2>The data</h2>
+    <p>
+    I used the Sentinel-2 10m Land Use/Land Cover Time Series produced by Esri and Impact Observatory, 
+    comparing 2017 and 2023. The dataset has a spatial resolution of 10 m 
+    and classifies land into nine categories.
+    The map service operates under the Esri Master License Agreement, 
+    while the source land-cover data is available under CC BY 4.0.   
+    </p>
+
+
+    <h2>The method</h2>
+    <p>
+I used the SWIPE tool in the Land Cover Explorer to compare the two years.
+
+Extent: The same Sydney map extent was used for both sides of the swipe.
+
+Scale: Both maps were displayed at the native resolution of 1 pixel per 10 m.
+
+Rendering: Both years used the same colours and nine land-cover categories.
+
+Instrument: Both maps came from the same Sentinel-2 land-cover time series.
+
+I also checked 2020 as a third date to see whether the observed changes were consistent.    </p>
+ 
+
+    <h2>The evidence</h2>
+
+    <figure>
+      <img
+        src="../resources/week06-2017-2020.png"
+        alt="Sydney land cover around the NYU site in 2017-2020, showing a landscape with a strong mix of built surfaces, vegetation, and open ground in the surrounding urban area."
+      >
+      <figcaption>
+        Figure 1. Sydney land cover around the NYU site in 2017-2020, showing the earlier urban pattern of built surfaces, green areas, and open ground.
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img
+        src="../resources/week06-2017-2023.png"
+        alt="Sydney land cover around the NYU site in 2017-2023, showing a denser built-up pattern and a more compressed distribution of vegetation compared with the earlier comparison."
+      >
+      <figcaption>
+        Figure 2. Sydney land cover around the NYU site in 2017-2023, showing the later pattern of built surfaces and vegetation in the same area.
+      </figcaption>
+    </figure>
+
+    <p>
+      <a href="https://livingatlas.arcgis.com/landcoverexplorer/#mapCenter=151.20696%2C-33.86940%2C13.95&mode=swipe&timeExtent=2017%2C2020" target="_blank" rel="noopener noreferrer">
+        Open the Sydney land cover comparison in ArcGIS Living Atlas
+      </a>
+    </p>
+
+    <h2>What I found</h2>
+    <p>
+The map reports that between 2017 and 2023, Water increased by 0.2 percentage points, Trees by 0.2 points, and Rangeland by 0.1 points, while Built Area decreased by 0.6 points. The other categories showed no separately displayed change in the panel.
+
+The third-date check shows a similar direction: by 2020, Trees had increased by 0.1 points and Built Area had decreased by 0.3 points compared with 2017. This supports the overall classification trend, although it does not prove continuous physical change.
+
+One change the map suggests is a small increase in classified vegetation. However, changes in smaller patches of urban greenery may remain invisible.    </p>
+
+ 
+    <h2>What this does not show</h2>
+    <div class="limits">
+      <p>
+The classification cannot reliably distinguish a botanical garden from other forms of urban green space. The published class definitions allow some parks and groves to appear as Built Area, so this is partly a limitation of the category system rather than necessarily an error.
+
+I am using the Trees category to stand for urban vegetation, and it might fail because each 10 m pixel receives only one classification, potentially hiding vegetation mixed with buildings and paths.
+
+Therefore, a small increase in Trees does not demonstrate an improvement in biodiversity or ecological quality.      </p>
+
+      <p>
+        <strong>AI use:</strong>
+        I used AI to help refine the wording and structure of this journal entry.
+        The map reading, interpretation, and final analysis are my own.
+      </p>
+    </div>
+
+    <a class="back" href="../index.html#journal">← Back to all entries</a>
+
+  </div>
+</article>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap wrap-narrow">
+    <p>Yiru Su · SOCS-SHU 289 · NYU Shanghai · Fall 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
