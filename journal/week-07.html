@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Week 07 · Yiru Su</title>
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-head">
+    <div class="wrap">
+      <a class="brand" href="../index.html">Yiru Su</a>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="../index.html#journal">Journal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="entry">
+      <div class="wrap wrap-narrow">
+
+        <p class="kicker">Week 07 · October 2026</p>
+
+        <h1>Australia's Trade Geography: From Country to Place</h1>
+
+        <h2>The question</h2>
+        <p>
+          How does the physical geography of my Sydney site shape local economic opportunities and constraints,
+          and to what extent does it help explain Australia's national export structure?
+        </p>
+
+        <h2>The data</h2>
+        <p>
+          I used Australia's 2024 export-by-destination data from Harvard University's Atlas of Economic Complexity,
+          using the HS92 classification and gross export values in current US dollars.
+          The Atlas draws on UN Comtrade goods trade data and reconciles exporter- and importer-reported values
+          using reliability-weighted estimates.
+          Its website permits reuse and adaptation with appropriate citation of the Atlas and underlying sources,
+          although it does not specify a named Creative Commons licence.
+        </p>
+
+        <p>
+          For boundaries, I used Natural Earth's Admin 0 - Countries, version 5.1.1,
+          at 1:110m scale. Natural Earth states:
+          "All versions of Natural Earth raster + vector map data found on this website are in the public domain."
+          These boundaries may be republished without permission.
+        </p>
+
+        <h2>The method</h2>
+        <p>
+          I uploaded both datasets to ArcGIS Online and performed a one-to-one left join,
+          matching Natural Earth's NAME with the Atlas table's Name.
+          I chose a left join to retain countries without matched trade data.
+        </p>
+        <p>
+          Of 177 polygons, 156 had nonblank export values and 21 remained blank.
+          The original trade table contained 218 rows,
+          suggesting approximately 62 unmatched trade records,
+          assuming unique identifiers and no original blank values.
+
+
+        </p>
+
+        <p>
+          These are possible identifier mismatches, not evidence of zero trade.
+          I found clear examples of identifier mismatches.
+          The Atlas records Australia's exports to the Democratic Republic of the Congo ($5,254,450),
+          the Republic of the Congo ($3,152,296), and Equatorial Guinea ($3,186,914).
+          However, Natural Earth labels these polygons as "Dem. Rep. Congo," "Congo," and "Eq. Guinea."
+          Because the join matched country names exactly, these records remained unmatched despite having nonzero trade
+          values.
+          This demonstrates that blank areas on the map do not necessarily indicate zero trade.
+        </p>
+        <p>
+          I mapped Gross_Export using five Natural Breaks classes and added three physical locations in Western
+          Australia.
+        </p>
+
+
+        <h2>The evidence</h2>
+        <!-- Add script to the <head> of your page to load the embeddable map component -->
+        <script type="module" src="https://js.arcgis.com/5.1/embeddable-components/"></script>
+        <!-- Add custom element to <body> of your page -->
+        <arcgis-embedded-map style="height:600px;width:700px;" item-id="050cf09e7f714e2983ba4805dee4ac1b" theme="light"
+          heading-enabled legend-enabled share-enabled time-zone-label-enabled
+          center="121.91519366857445,-12.503925844522948" scale="147914381.897889"
+          portal-url="https://nyuds.maps.arcgis.com"></arcgis-embedded-map>
+        <figcaption><strong>Map 1.</strong> Australia's Trade Geography and Iron Ore Export Locations (2024). The
+          choropleth shows Australia's merchandise exports by destination country, measured in gross export value
+          (current USD), classified using five Natural Breaks classes. The three orange points represent Mount Whaleback
+          Mine, Port Hedland, and Cape Lambert Port in Western Australia. Trade data: Harvard Growth Lab, <em>Atlas of
+            Economic Complexity</em> (2024, HS92); boundaries: Natural Earth Admin 0 – Countries (1:110m, v5.1.1). Data
+          were joined using <code>NAME</code> (Natural Earth) and <code>Name</code> (Atlas). The points highlight how
+          national trade statistics can obscure the specific locations of production and transportation.</figcaption>
+
+
+        <h2>What I found</h2>
+        <p>
+          One connection holds: Australia's large iron ore exports are closely linked to its mineral resources,
+          especially in the Pilbara region of Western Australia.
+          This contradicted my initial guess that wheat was Australia's largest export.
+        </p>
+
+        <p>
+          However, this relationship becomes less clear at the scale of my Sydney site.
+          Although Sydney's natural harbour provides advantages for shipping and trade,
+          Australia's major iron ore production is concentrated far from Sydney.
+          My three mapped points are all located in Western Australia.
+          This shows that a country's export basket may reflect its natural resources,
+          but national trade statistics cannot reveal where economic activities actually take place.
+        </p>
+
+
+
+        <h2>What this does not show</h2>
+        <div class="limits">
+
+          <p>
+            I am using country-level gross export values to stand for the geography of Australia's trade,
+            and this might fail because export values are assigned to entire destination countries,
+            although imports may enter through specific ports and subsequently move elsewhere.
+            The map does not show where goods are ultimately consumed or where their value is created.
+            Meanwhile, my three points identify only selected production and shipping facilities,
+            omitting the wider supply chain.
+          </p>
+          <p>
+            <strong>AI use:</strong>
+            I used AI to help refine the wording and structure of this journal entry.
+            The map reading, interpretation, and final analysis are my own.
+          </p>
+        </div>
+
+        <a class="back" href="../index.html#journal">← Back to all entries</a>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap wrap-narrow">
+      <p>Yiru Su · SOCS-SHU 289 · NYU Shanghai · Fall 2026</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
