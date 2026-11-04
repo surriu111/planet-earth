@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Week 08 · Yiru Su</title>
+
+  <link rel="stylesheet" href="../style.css">
+  <script type="module" src="https://js.arcgis.com/5.1/embeddable-components/"></script>
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-head">
+    <div class="wrap">
+      <a class="brand" href="../index.html">Yiru Su</a>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="../index.html#journal">Journal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="entry">
+      <div class="wrap wrap-narrow">
+
+        <p class="kicker">Week 08 · November 2026</p>
+
+        <h1>Digital Infrastructure and the City Network</h1>
+
+        <h2>The question</h2>
+        <p>
+          What digital infrastructure is mapped near my Sydney site, around the Royal Botanic Garden, and what can these
+          records tell us about the networks supporting the city? I examine this question at two spatial scales: the
+          immediate CBD area and a wider part of metropolitan Sydney.  
+        </p>
+
+        <h2>The data</h2>
+        <p>
+          I used three sources, accessed on November 4, 2026. The first was the TeleGeography Submarine Cable Map,
+          published by TeleGeography. Its map screenshots are available under a CC BY-SA 4.0 licence, and screenshots may
+          be reproduced with attribution. The underlying database is restricted, and the interactive map is not embeddable.
+        </p>
+        <p>
+          The second source was OpenStreetMap data retrieved through Overpass Turbo, contributed by OSM volunteers. The
+          data are available under the Open Database License (ODbL) 1.0, and rendered maps may be published with attribution
+          and a licence notice. Shared derivative databases are also subject to ODbL terms.
+        </p>
+        <p>
+          The third source was the Data Center Map, published by Data Center Map ApS. Its content is subject to restrictive
+          terms of use, and it cannot be reproduced without prior written permission. I should confirm the exact access date
+          and terms before submission.
+        </p>
+
+       
+
+        <h2>The method</h2>
+        <p>
+          I ran three Overpass queries. The first mapped electricity infrastructure in the study area:
+        </p>
+        <div class="query-box">
+          <pre><code>[out:json][timeout:60];
+(
+  nwr["power"="substation"]({{bbox}});
+  nwr["power"="tower"]({{bbox}});
+);
+out center;</code></pre>
+        </div>
+
+        <p>
+          The second mapped telecom and data-centre infrastructure across the wider Sydney extent:
+        </p>
+        <div class="query-box">
+          <pre><code>[out:json][timeout:120];
+(
+  nwr["telecom"]({{bbox}});
+  nwr["building"="data_center"]({{bbox}});
+);
+out center;</code></pre>
+        </div>
+
+        <p>
+          The third was a narrower telecom-only query for anything at all carrying a telecom key, whatever its value, not
+          limited to landing stations, data centres, or other specific categories:
+        </p>
+        <div class="query-box">
+          <pre><code>[out:json][timeout:60];
+nwr["telecom"]({{bbox}});
+out center;</code></pre>
+        </div>
+
+        <p>
+          These queries were used to compare the immediate CBD context with a wider urban network and to identify how
+          public mapping captures digital infrastructure around the Royal Botanic Garden site.
+        </p>
+
+        <p>
+         Server: https://overpass-api.de/api/ (Overpass API). Retrieved November 4, 2026.
+        </p>
+
+  
+        <h2>The evidence</h2>
+        <arcgis-embedded-map style="height:600px;width:700px;" item-id="c11e9bc7cdb947d4938894ec87502421"
+          theme="light" heading-enabled legend-enabled information-enabled time-zone-label-enabled
+          center="151.18566710000613,-33.85192714284069" scale="144447.638572"
+          portal-url="https://nyuds.maps.arcgis.com"></arcgis-embedded-map>
+        <figcaption><strong>Map 1.</strong> Mapped electricity infrastructure (<code>power=substation</code> and
+          <code>power=tower</code>) in Sydney, retrieved from OpenStreetMap via Overpass Turbo on November 4, 2026.
+          Contains information from OpenStreetMap, which is made available here under the Open Database License
+          (ODbL).</figcaption>
+
+        <h2>What I found</h2>
+        <p>
+          The telecom query returned 58 records across the wider Sydney area, with telephone exchanges appearing
+          frequently, alongside a smaller number of data centres and a cable landing station. This uneven representation
+          suggests that different types of digital infrastructure are not equally documented in OpenStreetMap. Repeated
+          facility names also show that the number of records does not necessarily equal the number of distinct facilities.
+        </p>
+
+        <p>
+          The power infrastructure maps reveal another contrast. Compared with the dense, relatively regular corridors of
+          mapped transmission towers in the Shanghai tutorial, Sydney's mapped infrastructure appears more dispersed and less
+          geometrically regular. This may partly reflect differences in urban geography, but also differences in mapping
+          coverage and the extent of each query.
+        </p>
+
+        <p>
+          What remains absent is the network itself. Although OSM identifies individual facilities, it does not establish
+          their actual connections, underground transmission routes, or available capacity. The mapped points therefore
+          reveal where some infrastructure has been recorded, rather than how Sydney's complete digital and electricity
+          networks function.
+        </p>
+
+        <h2>What this does not show</h2>
+        <div class="limits">
+          <p>
+            I am using mapped electricity infrastructure to stand for the grid accessible to my Sydney site, and it might
+            fail because volunteer mapping based partly on visible features can represent overhead infrastructure while omitting
+            underground connections and information about actual grid capacity.
+          </p>
+          <p>
+            <strong>AI use:</strong> I used AI to help refine the wording and structure of this journal entry. The data
+            collection, interpretation, and final analysis are my own.
+          </p>
+        </div>
+
+        <a class="back" href="../index.html#journal">← Back to all entries</a>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap wrap-narrow">
+      <p>Yiru Su · SOCS-SHU 289 · NYU Shanghai · Fall 2026</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

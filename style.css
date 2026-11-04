@@ -264,6 +264,35 @@ arcgis-embedded-map {
   }
 }
 
+/* ---------- code/query blocks ---------- */
+.query-box {
+  margin: 18px 0 20px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  background: #f8f7f4;
+  overflow: hidden;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);
+}
+
+.query-box pre {
+  margin: 0;
+  padding: 16px 18px;
+  background: #f8f7f4;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.query-box code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: inherit;
+}
+
 /* ------------------------------------------------------------
    Your site name on the front page. Added for SOCS-SHU 289.
    ------------------------------------------------------------ */
